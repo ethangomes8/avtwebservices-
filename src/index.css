@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #B72B27;
+  --primary-dark: #8B1F1C;
+  --primary-light: #D84A46;
+  --secondary: #1A1A1A;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased text-gray-900;
+}
+
+.btn-primary {
+  @apply bg-[#B72B27] hover:bg-[#8B1F1C] text-white transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply border-2 border-[#B72B27] text-[#B72B27] hover:bg-[#B72B27] hover:text-white transition-colors duration-200;
+}
+
+img {
+  @apply transform transition-transform duration-200;
+}
+
+/* Optimisations de performance */
+@layer utilities {
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
